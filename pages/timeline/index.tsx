@@ -1,4 +1,3 @@
-import OutlinedTimeline from "@/components/timeline";
 import DefaultLayout from "@/layouts/default";
 import React from "react";
 
