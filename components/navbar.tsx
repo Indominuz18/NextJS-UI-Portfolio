@@ -14,7 +14,7 @@ import {
 } from "@nextui-org/react";
 import NextLink from "next/link";
 import clsx from "clsx";
-
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
@@ -61,8 +61,8 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex gap-2">
-          <Link isExternal href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
+          <Link isExternal href={siteConfig.links.linkedin}>
+          
           </Link>
           <Link isExternal href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />

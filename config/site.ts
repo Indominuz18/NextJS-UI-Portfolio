@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Manmeet S.",
+  description: "Welcome to Manmeet Singh's amazing personal portfolio!",
   navItems: [
     {
       label: "Home",
@@ -23,6 +23,10 @@ export const siteConfig = {
     {
       label: "Contact",
       href: "/contact",
+    },
+    {
+      label: "TimeLine",
+      href: "/timeline",
     },
   ],
   navMenuItems: [
@@ -49,7 +53,7 @@ export const siteConfig = {
   ],
   links: {
     github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
+    linkedin: "https://twitter.com/getnextui",
     docs: "https://nextui-docs-v2.vercel.app",
     discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev",

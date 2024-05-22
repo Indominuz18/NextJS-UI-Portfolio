@@ -12,7 +12,7 @@ export default function TechstackCard(props: any) {
         width={100}
       />
       <CardFooter className="relative left-0 bottom-0 justify-center text-center py-1 before:rounded-xl rounded-large w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-        <p className=" text-white/80">{props.title}</p>
+        <p>{props.title}</p>
       </CardFooter>
     </Card>
   );
