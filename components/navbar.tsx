@@ -26,6 +26,8 @@ import {
 } from "@/components/icons";
 import { Logo } from "@/components/icons";
 import classes from "./navbar.module.css";
+import LinkedIn from "@mui/icons-material/LinkedIn";
+import DropDown from "./dropdown";
 
 export const Navbar = () => {
   return (
@@ -37,7 +39,9 @@ export const Navbar = () => {
             <p className="font-bold text-inherit">INDO</p>
           </NextLink>
         </NavbarBrand>
-        <div className={` ${classes.link} hidden md:flex lg:flex gap-4 justify-start ml-2`}>
+        <div
+          className={` ${classes.link} hidden md:flex lg:flex gap-4 justify-start ml-2`}
+        >
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -60,9 +64,9 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex gap-2">
-          <Link isExternal href={siteConfig.links.linkedin}></Link>
-          <Link isExternal href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+          <DropDown />
+          <Link isExternal href={siteConfig.links.linkedin}>
+            <LinkedIn />
           </Link>
           <Link isExternal href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
@@ -72,6 +76,9 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
+        <Link isExternal href={siteConfig.links.linkedin}>
+          <LinkedIn />
+        </Link>
         <Link isExternal href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
         </Link>
@@ -97,6 +104,7 @@ export const Navbar = () => {
               </NextLink>
             </NavbarMenuItem>
           ))}
+          <DropDown />
         </div>
       </NavbarMenu>
     </NextUINavbar>

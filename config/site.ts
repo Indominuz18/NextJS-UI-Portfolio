@@ -52,8 +52,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    linkedin: "https://twitter.com/getnextui",
+    github: "https://github.com/Indominuz18",
+    linkedin: "https://www.linkedin.com/in/manmeet-singh-27bb1a204/",
     docs: "https://nextui-docs-v2.vercel.app",
     discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev",
