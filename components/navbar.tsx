@@ -14,7 +14,7 @@ import {
 } from "@nextui-org/react";
 import NextLink from "next/link";
 import clsx from "clsx";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
@@ -25,10 +25,9 @@ import {
   SearchIcon,
 } from "@/components/icons";
 import { Logo } from "@/components/icons";
+import classes from "./navbar.module.css";
 
 export const Navbar = () => {
-  
-
   return (
     <NextUINavbar maxWidth="full" position="sticky">
       <NavbarContent className="basis-1/5 md:basis-full" justify="start">
@@ -38,13 +37,13 @@ export const Navbar = () => {
             <p className="font-bold text-inherit">INDO</p>
           </NextLink>
         </NavbarBrand>
-        <div className="hidden md:flex lg:flex gap-4 justify-start ml-2">
+        <div className={` ${classes.link} hidden md:flex lg:flex gap-4 justify-start ml-2`}>
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -61,9 +60,7 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden md:flex gap-2">
-          <Link isExternal href={siteConfig.links.linkedin}>
-          
-          </Link>
+          <Link isExternal href={siteConfig.links.linkedin}></Link>
           <Link isExternal href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
@@ -72,7 +69,6 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        
       </NavbarContent>
 
       <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
@@ -96,7 +92,6 @@ export const Navbar = () => {
                       : "foreground"
                 }
                 href={item.href}
-
               >
                 {item.label}
               </NextLink>
