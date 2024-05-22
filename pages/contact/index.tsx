@@ -45,8 +45,8 @@ export default function DocsPage() {
               placeholder="Enter your description"
               className="max-w"
             />
-            <Button className="mx-auto" color="primary">
-              Submit
+            <Button className={`mx-auto ${classes.Button}`}  >
+              <p>Submit</p>
             </Button>
           </form>
 

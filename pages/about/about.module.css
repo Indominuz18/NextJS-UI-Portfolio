@@ -1,8 +1,10 @@
 .title {
-  font-size: 3rem;
+  font-size: 4rem;
+  background: -webkit-linear-gradient(rgb(109, 0, 139), rgb(204, 50, 112));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
-  margin-bottom: 30px;
-  color: #f31260;
+  margin-bottom: 50px;
 }
 
 .img img {
