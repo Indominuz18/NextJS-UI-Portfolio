@@ -1,0 +1,90 @@
+.heroSection {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.heroAvatar{
+  border-radius: 20rem;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  background-color: #18181b;
+margin-left: auto;
+margin-right: auto;
+}
+
+.heroSection span {
+  font-weight: 1000;
+  font-size: 4rem;
+  color: #7828c8;
+}
+
+.heroSection p {
+  font-weight: 1000;
+  font-size: 3rem;
+  align-items: center;
+}
+
+.discription {
+  font-size: 1.2rem;
+  text-align: left;
+  margin-top: 20px;
+  color: #f31260;
+}
+
+.info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.img {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .heroSection img {
+    background-color: #18181b;
+    width: 80%;
+    margin: 30px;
+  }
+
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .info {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 80%;
+  }
+
+  .discription {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+
+}

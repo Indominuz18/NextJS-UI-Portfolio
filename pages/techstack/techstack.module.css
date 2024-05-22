@@ -1,0 +1,12 @@
+.title{
+    font-size: 3rem;
+    font-weight: 700;   
+}
+
+.techstack{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}

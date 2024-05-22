@@ -1,0 +1,36 @@
+.title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #f31260;
+}
+
+.img img{
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.description{
+    padding: 50px;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .about{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img img{
+        margin: 20px;
+    }
+
+    .description{
+        width: 90%;
+        margin: 20px 0px;
+    }
+
+  }
