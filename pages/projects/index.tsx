@@ -3,6 +3,7 @@ import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import Image from "next/image";
 import classes from "./projects.module.css";
+import { siteConfig } from "@/config/site";
 
 export default function DocsPage() {
   return (
@@ -17,11 +18,15 @@ export default function DocsPage() {
           className={classes.img}
         />
         <div className="flex flex-row flex-wrap items-center justify-center gap-4">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {siteConfig.projects.map((item) => (
+            <ProjectCard
+              key={item.link}
+              link={item.link}
+              image={item.image}
+              description={item.description}
+              alt={item.alt}
+            />
+          ))}
         </div>
       </section>
     </DefaultLayout>
