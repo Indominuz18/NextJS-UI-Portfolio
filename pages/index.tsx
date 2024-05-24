@@ -29,10 +29,11 @@ export default function IndexPage() {
             style={{ fontSize: "3em", display: "inline-block" }}
           />
           <h1 className={classes.discription}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Welcome to my personal portfolio! I'm a Software Developer based in
+            Burnaby, British Columbia. I specialize in frameworks like NextJS,
+            and have experience with languages including JavaScript, TypeScript,
+            and Python. Explore my projects and experience to see how I bring
+            ideas to life through code.
           </h1>
         </section>
         <section className={classes.img}>
