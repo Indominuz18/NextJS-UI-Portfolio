@@ -25,6 +25,7 @@ export default function DocsPage() {
               image={item.image}
               description={item.description}
               alt={item.alt}
+              className={classes.card}
             />
           ))}
         </div>

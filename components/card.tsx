@@ -11,7 +11,7 @@ import {
 
 export default function ProjectCard(props: any) {
   return (
-    <Card className="max-w-[400px] sm:max-w-md" >
+    <Card className="max-w-[400px] md:max-w-[400px] sm:max-w-[20px]" >
       <CardHeader className="flex gap-3">
         <Image
           alt={props.alt}
