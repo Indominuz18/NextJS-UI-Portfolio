@@ -21,11 +21,11 @@ export default function DropDown() {
         <DropdownItem>IOS Developer</DropdownItem> */}
         <DropdownItem key={"Software Developer"}>
           <Link
-            href={"/files/Summer_2024_Resume.pdf"}
-            target="_blank"
-            rel="noopener noreferrer"
-            locale={false}
             download
+            href={"/files/Summer_2024_Resume.pdf"}
+            locale={false}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             Software Developer
           </Link>

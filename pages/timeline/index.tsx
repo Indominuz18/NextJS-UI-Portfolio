@@ -1,8 +1,9 @@
-import DefaultLayout from "@/layouts/default";
 import { motion } from "framer-motion";
 import React from "react";
+
+import DefaultLayout from "@/layouts/default";
+
 import classes from "./timeline.module.css";
-import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 
 interface TimelineItem {
   id: number;
@@ -26,9 +27,9 @@ export default function TimelinePage() {
         "Developed a web farm app using Next.js, PostgreSQL, Prisma, Material UI, and Kafka to display agricultural automation data in an intuitive and user-friendly manner, improving operational efficiency.",
         "Integrated real-time data from Formant into the web app's UI, enabling users to monitor farm operations seamlessly and make data-driven decisions with a clean and accessible interface.",
         "Optimized PostgreSQL queries using Prisma ORM, reducing query execution times by 30% and enhancing overall app performance, while ensuring data consistency and integrity.",
-        "Managed Git version control and streamlined development with a CI/CD pipeline, automating testing and deployment, and improving collaboration through efficient handling of pull requests and merge requests."
+        "Managed Git version control and streamlined development with a CI/CD pipeline, automating testing and deployment, and improving collaboration through efficient handling of pull requests and merge requests.",
       ],
-      category: "work"
+      category: "work",
     },
     {
       id: 2,
@@ -39,9 +40,9 @@ export default function TimelinePage() {
       description: [
         "Worked collaboratively with a team of four developers to maintain the CJSF radio station mobile app using React Native. Actively participated in team meetings to discuss and plan app features, updates, and bug fixes.",
         "Utilized React Native to ensure cross-platform compatibility and efficient development processes. Integrated various APIs to support live streaming and other essential app functionalities.",
-        "Implemented RESTful APIs to fetch and manage audio files, enabling real-time streaming and reliable access to radio content. Optimized server performance to handle high traffic for live audio streaming."
+        "Implemented RESTful APIs to fetch and manage audio files, enabling real-time streaming and reliable access to radio content. Optimized server performance to handle high traffic for live audio streaming.",
       ],
-      category: "work"
+      category: "work",
     },
     {
       id: 3,
@@ -50,10 +51,10 @@ export default function TimelinePage() {
       date: "Sep 2021 - Sep 2026",
       location: "Burnaby, BC",
       description: [
-        "Pursuing a Bachelor of Science in Computing Science with a focus on software development and computer systems."
+        "Pursuing a Bachelor of Science in Computing Science with a focus on software development and computer systems.",
       ],
-      category: "education"
-    }
+      category: "education",
+    },
   ];
 
   // Animations
@@ -62,9 +63,9 @@ export default function TimelinePage() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -73,18 +74,18 @@ export default function TimelinePage() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-10 px-4">
-        <motion.h1 
+        <motion.h1
+          animate={{ opacity: 1, y: 0 }}
           className={classes.title}
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Experience
@@ -92,34 +93,36 @@ export default function TimelinePage() {
 
         <div className={classes.timelineContainer}>
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
             animate="visible"
             className="space-y-10"
+            initial="hidden"
+            variants={containerVariants}
           >
             {timelineItems.map((item) => (
-              <motion.div 
+              <motion.div
                 key={item.id}
-                variants={itemVariants}
                 className={`${classes.timelineItem} ${
-                  item.category === "education" ? "border-l-blue-500" : "border-l-primary"
+                  item.category === "education"
+                    ? "border-l-blue-500"
+                    : "border-l-primary"
                 }`}
+                variants={itemVariants}
               >
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                   <h3 className={classes.timelineTitle}>{item.title}</h3>
                   <div className={classes.timelineDate}>
-                    <FaCalendarAlt className="inline mr-2" />
+                    <span className="inline mr-2">📅</span>
                     {item.date}
                   </div>
                 </div>
-                
+
                 <h4 className={classes.timelineSubtitle}>{item.subtitle}</h4>
-                
+
                 <div className={classes.timelineLocation}>
-                  <FaMapMarkerAlt />
+                  <span className="inline mr-1">📍</span>
                   <span>{item.location}</span>
                 </div>
-                
+
                 <div className="mt-4">
                   <ul className="list-disc pl-5 space-y-2">
                     {item.description.map((point, index) => (

@@ -1,8 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/react";
 import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { clsx } from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
@@ -23,7 +22,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const onChange = () => {
     setIsTransitioning(true);
     const newTheme = theme === "light" ? "dark" : "light";
-    
+
     // Add a slight delay to make the transition visible
     setTimeout(() => {
       setTheme(newTheme);
@@ -61,33 +60,50 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         ),
       })}
     >
-      <VisuallyHidden>
+      <div
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: "0",
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          borderWidth: "0",
+        }}
+      >
         <input {...getInputProps()} />
-      </VisuallyHidden>
+      </div>
       <div
         {...getWrapperProps()}
         className={slots.wrapper({
           class: clsx(classNames?.wrapper, "w-auto h-auto"),
         })}
       >
-        <AnimatePresence mode="wait">
-          <motion.div 
+        {theme && (
+          <motion.div
             key={theme}
-            initial={{ opacity: isTransitioning ? 0 : 1, scale: isTransitioning ? 0.5 : 1, rotate: isTransitioning ? -180 : 0 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            className={clsx("p-1 rounded-full", {
+              "text-yellow-500": theme === "light",
+              "text-sky-500": theme === "dark",
+            })}
             exit={{ opacity: 0, scale: 0.5, rotate: 180 }}
+            initial={{
+              opacity: isTransitioning ? 0 : 1,
+              scale: isTransitioning ? 0.5 : 1,
+              rotate: isTransitioning ? -180 : 0,
+            }}
             transition={{ duration: 0.3 }}
-            className={clsx(
-              "p-1 rounded-full",
-              {
-                "text-yellow-500": theme === "light",
-                "text-sky-500": theme === "dark",
-              }
-            )}
           >
-            {!isSelected || theme === "dark" ? <MoonFilledIcon size={22} /> : <SunFilledIcon size={22} />}
+            {!isSelected || theme === "dark" ? (
+              <MoonFilledIcon size={22} />
+            ) : (
+              <SunFilledIcon size={22} />
+            )}
           </motion.div>
-        </AnimatePresence>
+        )}
       </div>
     </Component>
   );

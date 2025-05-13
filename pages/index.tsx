@@ -1,24 +1,31 @@
-import DefaultLayout from "@/layouts/default";
 import Image from "next/image";
-import classes from "./page.module.css";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 
+import DefaultLayout from "@/layouts/default";
+
+import classes from "./page.module.css";
+
 export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className={`${classes.heroSection} px-4 md:px-0`}>
-        <motion.section 
+        <motion.section
+          animate={{ opacity: 1, y: 0 }}
           className={`${classes.info} md:pr-8`}
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-lg md:text-xl font-medium">Hello, I&apos;m</span>
+          <span className="text-lg md:text-xl font-medium">
+            Hello, I&apos;m
+          </span>
 
           <TypeAnimation
+            className="my-4 text-2xl md:text-3xl lg:text-4xl"
+            cursor={true}
+            repeat={Infinity}
             sequence={[
               "Manmeet Singh",
               5000,
@@ -31,24 +38,21 @@ export default function IndexPage() {
               "a CS Student @ Simon Fraser University",
               1500,
             ]}
-            wrapper="p"
-            cursor={true}
-            repeat={Infinity}
-            style={{ 
-              fontSize: "2em", 
+            style={{
+              fontSize: "2em",
               display: "inline-block",
               fontWeight: "bold",
               background: "linear-gradient(90deg, #4F46E5 0%, #10B981 100%)",
               WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
+              WebkitTextFillColor: "transparent",
             }}
-            className="my-4 text-2xl md:text-3xl lg:text-4xl"
+            wrapper="p"
           />
 
-          <motion.h1 
+          <motion.h1
+            animate={{ opacity: 1 }}
             className={`${classes.description} text-base md:text-lg leading-relaxed max-w-2xl`}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             Welcome to my personal portfolio! I'm a Software Developer based in
@@ -58,45 +62,40 @@ export default function IndexPage() {
             ideas to life through code.
           </motion.h1>
 
-          <motion.div 
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
             className="flex gap-4 mt-6"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Button 
+            <Button
               as={Link}
-              href="/projects"
               color="primary"
-              variant="shadow"
+              href="/projects"
               size="lg"
+              variant="shadow"
             >
               View Projects
             </Button>
-            <Button
-              as={Link}
-              href="/contact"
-              variant="bordered"
-              size="lg"
-            >
+            <Button as={Link} href="/contact" size="lg" variant="bordered">
               Contact Me
             </Button>
           </motion.div>
         </motion.section>
 
-        <motion.section 
+        <motion.section
+          animate={{ opacity: 1, scale: 1 }}
           className={classes.img}
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Image
-            className={`${classes.heroAvatar} drop-shadow-2xl`}
-            width={400}
-            height={400}
-            alt="avatar"
-            src={"/hero-1.png"}
             priority
+            alt="avatar"
+            className={`${classes.heroAvatar} drop-shadow-2xl`}
+            height={400}
+            src={"/hero-1.png"}
+            width={400}
           />
         </motion.section>
       </section>

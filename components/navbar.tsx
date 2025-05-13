@@ -1,8 +1,5 @@
 import {
-  Button,
-  Kbd,
   Link,
-  Input,
   Navbar as NextUINavbar,
   NavbarContent,
   NavbarMenu,
@@ -14,20 +11,15 @@ import {
 } from "@nextui-org/react";
 import NextLink from "next/link";
 import clsx from "clsx";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LinkedIn from "@mui/icons-material/LinkedIn";
+
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-} from "@/components/icons";
+import { GithubIcon } from "@/components/icons";
 import { Logo } from "@/components/icons";
-import classes from "./navbar.module.css";
-import LinkedIn from "@mui/icons-material/LinkedIn";
+
 import DropDown from "./dropdown";
+import classes from "./navbar.module.css";
 
 export const Navbar = () => {
   return (
@@ -47,7 +39,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "data-[active=true]:text-primary data-[active=true]:font-medium",
                 )}
                 color="foreground"
                 href={item.href}

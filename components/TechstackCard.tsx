@@ -3,7 +3,11 @@ import { Card, CardFooter, Image } from "@nextui-org/react";
 
 export default function TechstackCard(props: any) {
   return (
-    <Card isFooterBlurred radius="lg" className="border-none p-5 background-color-black">
+    <Card
+      isFooterBlurred
+      className="border-none p-5 background-color-black"
+      radius="lg"
+    >
       <Image
         alt="Woman listing to music"
         className="object-cover"
