@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/projects",
     },
     {
+      label: "Experience",
+      href: "/timeline",
+    },
+    {
       label: "About",
       href: "/about",
     },
@@ -33,6 +37,10 @@ export const siteConfig = {
     {
       label: "Projects",
       href: "/projects",
+    },
+    {
+      label: "Experience",
+      href: "/timeline",
     },
     {
       label: "About",
@@ -135,6 +143,7 @@ export const siteConfig = {
         "This Personal Portfolio Application showcases my work and skills using Next.js, React, Redux, CSS, and HTML. It features a responsive design, interactive UI, project showcases, and SEO optimization. Built for performance and user engagement, it highlights my expertise in modern web development technologies and best practices.        ",
       link: "https://github.com/Indominuz18/NextJS-UI-Portfolio",
       alt: "Personal Portfolio",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "NextUI"]
     },
     {
       image: "Sentiment-Analysis-For-Restaurant-Reviews.png",
@@ -142,6 +151,7 @@ export const siteConfig = {
         "Conducted sentiment analysis on 1000 restaurant reviews using Python, Numpy, Matplotlib, NLTK, Scikit-Learn, and Pandas. Applied NLP techniques such as lemmatization, stemming, and tokenization. Trained a Naive-Bayes classifier achieving 75% accuracy, improved by 8% through GridSearchCV. Visualized sentiment categories and model metrics with bar graphs and scatterplots.        ",
       link: "https://github.com/Indominuz18/Sentiment-Analysis-For-Restaurant-Reviews",
       alt: "Sentiment-Analysis-For-Restaurant-Reviews",
+      technologies: ["Python", "NLTK", "Scikit-Learn", "Pandas", "Matplotlib", "NLP"]
     },
     {
       image: "HMM-AI-Model.png",
@@ -149,6 +159,7 @@ export const siteConfig = {
         "Conduct unsupervised intrusion detection using time series analysis on control system data. Perform PCA for feature selection, train and test multivariate Hidden Markov Models with varying states, and detect anomalies in datasets. Evaluate models using log-likelihood and BIC, and analyze results to identify anomalies.        ",
       link: "https://github.com/Indominuz18/HMM-AI-Model",
       alt: "HMM-AI-Model",
+      technologies: ["AI", "Machine Learning", "Time Series Analysis", "PCA", "HMM"]
     },
     {
       image: "flashchat.png",
@@ -156,6 +167,7 @@ export const siteConfig = {
         "Developed FlashChat, a real-time chat application using Swift, Xcode, Firebase Auth, Firestore, and SwiftUI. Implemented real-time event listeners for Firestore schemas, handling hundreds of messages with sub 1-second latency. Applied MVC design patterns for clear separation of concerns. Leveraged SwiftUI to optimize interface development speed by 30%, enhancing user experience.        ",
       link: "https://github.com/Indominuz18/Flash-Chat-iOS13",
       alt: "Flash Chat",
+      technologies: ["Swift", "SwiftUI", "Firebase", "Firestore", "MVC"]
     },
     {
       image: "tsp_solver.png",
@@ -163,6 +175,7 @@ export const siteConfig = {
         "Developed a Travelling Salesman Problem (TSP) solver using C++. The project features modular code, separating functionality into helper and core files for better organization and maintainability. Implemented a greedy approach to find a solution, ensuring efficiency in solving the problem.        ",
       link: "https://github.com/Indominuz18/TSP-solver",
       alt: "TSP Solver C++",
+      technologies: ["C++", "Algorithms", "Data Structures", "Greedy Approach"]
     },
   ],
 };

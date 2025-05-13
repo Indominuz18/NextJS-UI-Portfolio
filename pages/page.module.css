@@ -9,11 +9,12 @@
 .heroAvatar {
   margin-bottom: 30px;
   margin-left: 0px;
-  background-color: #18181b;
+  background-color: var(--avatar-bg, #18181b);
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(#18181b, #18181b) padding-box,
-              linear-gradient(to bottom, rgb(109, 0, 139), rgb(204, 50, 112)) border-box;
+  background: 
+    linear-gradient(var(--avatar-bg, #18181b), var(--avatar-bg, #18181b)) padding-box,
+    linear-gradient(to bottom, rgb(109, 0, 139), rgb(204, 50, 112)) border-box;
   border-radius: 50em;
   border: 4px solid;
 }
@@ -62,7 +63,7 @@
   }
 
   .heroSection img {
-    background-color: #18181b;
+    background-color: var(--avatar-bg, #18181b);
     width: 80%;
     margin: 30px;
   }
@@ -89,4 +90,14 @@
     text-align: center;
     margin-bottom: 50px;
   }
+}
+
+/* Light mode colors */
+:global(.light) .heroAvatar {
+  --avatar-bg: #f4f4f5;
+}
+
+/* Dark mode colors */
+:global(.dark) .heroAvatar {
+  --avatar-bg: #18181b;
 }

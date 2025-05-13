@@ -19,7 +19,7 @@ export default function DropDown() {
         <DropdownItem>Web Developer</DropdownItem>
         <DropdownItem>Machine Learning Engineer</DropdownItem>
         <DropdownItem>IOS Developer</DropdownItem> */}
-        <DropdownItem>
+        <DropdownItem key={"Software Developer"}>
           <Link
             href={"/files/Summer_2024_Resume.pdf"}
             target="_blank"

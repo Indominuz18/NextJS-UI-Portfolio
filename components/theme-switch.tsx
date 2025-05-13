@@ -1,8 +1,9 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/react";
 import { useTheme } from "next-themes";
-import clsx from "clsx";
+import { motion, AnimatePresence } from "framer-motion";
+import { clsx } from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 
@@ -16,11 +17,20 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const [isMounted, setIsMounted] = useState(false);
-
   const { theme, setTheme } = useTheme();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const onChange = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    setIsTransitioning(true);
+    const newTheme = theme === "light" ? "dark" : "light";
+    
+    // Add a slight delay to make the transition visible
+    setTimeout(() => {
+      setTheme(newTheme);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
+    }, 50);
   };
 
   const {
@@ -32,14 +42,14 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     getWrapperProps,
   } = useSwitch({
     isSelected: theme === "light",
+    "aria-label": `Switch to ${theme === "light" ? "dark" : "light"} mode`,
     onChange,
   });
 
   useEffect(() => {
     setIsMounted(true);
-  }, [isMounted]);
+  }, []);
 
-  // Prevent Hydration Mismatch
   if (!isMounted) return <div className="w-6 h-6" />;
 
   return (
@@ -48,7 +58,6 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className: clsx(
           "px-px transition-opacity hover:opacity-80 cursor-pointer",
           className,
-          classNames?.base,
         ),
       })}
     >
@@ -58,27 +67,27 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
       <div
         {...getWrapperProps()}
         className={slots.wrapper({
-          class: clsx(
-            [
-              "w-auto h-auto",
-              "bg-transparent",
-              "rounded-lg",
-              "flex items-center justify-center",
-              "group-data-[selected=true]:bg-transparent",
-              "!text-default-500",
-              "pt-px",
-              "px-0",
-              "mx-0",
-            ],
-            classNames?.wrapper,
-          ),
+          class: clsx(classNames?.wrapper, "w-auto h-auto"),
         })}
       >
-        {isSelected ? (
-          <MoonFilledIcon size={22} />
-        ) : (
-          <SunFilledIcon size={22} />
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={theme}
+            initial={{ opacity: isTransitioning ? 0 : 1, scale: isTransitioning ? 0.5 : 1, rotate: isTransitioning ? -180 : 0 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            exit={{ opacity: 0, scale: 0.5, rotate: 180 }}
+            transition={{ duration: 0.3 }}
+            className={clsx(
+              "p-1 rounded-full",
+              {
+                "text-yellow-500": theme === "light",
+                "text-sky-500": theme === "dark",
+              }
+            )}
+          >
+            {!isSelected || theme === "dark" ? <MoonFilledIcon size={22} /> : <SunFilledIcon size={22} />}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </Component>
   );
